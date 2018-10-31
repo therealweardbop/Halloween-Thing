@@ -83,17 +83,15 @@ def draw():
                     if not(prev + a < 100 or prev + a > 700):
                         break
                 prev += a
-        for i in range(len(candies)-1,  0, -1):
-            candies[i].yloc +=increments
-            candies[i].display()
-            if candies[i].yloc >=440 and candies[i].yloc <= 550 and candies[i].xloc+20 > xpos and candies[i].xloc-20 < xpos + 50:
-                candies.pop(i)
-                i = 0
+        for i in candies:
+            i.yloc +=increments
+            i.display()
+            if i.yloc >=440 and i.yloc <= 550 and i.xloc+20 > xpos and i.xloc-20 < xpos + 50:
+                candies.remove(i)
                 score += 1
-            if candies[i].yloc >=610:
+            if i.yloc >=610:
                 strikes += 1
-                candies.pop(i)
-                i = 0
+                candies.remove(i)
         textSize(32)
         fill(250, 250, 250)
         text("Missed\nCandies", 10, 220)
