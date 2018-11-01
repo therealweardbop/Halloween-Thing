@@ -96,3 +96,4 @@ def draw():
         fill(250, 250, 250)
         text("Missed\nCandies", 10, 220)
         text("Candies Collected: "+ str(score), 430, 50)
+        
